@@ -432,3 +432,17 @@ a{color:inherit; text-decoration:none;}
   html{ scroll-behavior: auto; }
   .reveal{ transition: none; opacity: 1; transform: none; }
 }
+
+
+/* ===== Contact Success Message ===== */
+.contact__success{
+  display: none;
+  border-left: 3px solid var(--gold);
+  background: rgba(10,26,51,0.03);
+  padding: 1.6rem 1.8rem;
+  font-size: 1rem;
+  color: var(--navy);
+}
+.contact__success.is-visible{
+  display: block;
+}

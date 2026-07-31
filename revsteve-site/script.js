@@ -103,3 +103,30 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 
 revealEls.forEach(el => observer.observe(el));
+
+
+// Contact form — submit without leaving the page
+const contactForm = document.getElementById('contactForm');
+const contactSuccess = document.getElementById('contactSuccess');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(contactForm);
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    })
+      .then(() => {
+        contactForm.style.display = 'none';
+        contactSuccess.classList.add('is-visible');
+      })
+      .catch((error) => {
+        alert('Something went wrong sending your message. Please try again or email directly.');
+        console.error(error);
+      });
+  });
+}
