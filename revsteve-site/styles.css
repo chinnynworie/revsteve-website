@@ -273,20 +273,31 @@ a{color:inherit; text-decoration:none;}
   margin-top: 2.5rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.2rem;
+  gap: 1.5rem;
   border-top: 1px solid rgba(10,26,51,0.12);
   padding-top: 2rem;
 }
-.credential{ display: flex; flex-direction: column; gap: 0.3rem; }
-.credential__label{
+.credential-card{
+  border-left: 2px solid var(--gold);
+  padding-left: 1.2rem;
+}
+.credential-card__label{
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--gold);
+  display: block;
+  margin-bottom: 0.6rem;
 }
-.credential__value{
+.credential-card__list{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.credential-card__list li{
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--navy);
 }
 
@@ -317,6 +328,44 @@ a{color:inherit; text-decoration:none;}
 .sermons{ text-align: center; }
 .sermons__intro{ max-width: 55ch; margin: 0 auto 2.5rem; color: #444; }
 .spotify-embed{ max-width: 700px; margin: 0 auto; }
+/* ===== Featured Messages ===== */
+/* ===== Message Cards ===== */
+.message-cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  max-width: 700px;
+  margin: 2.5rem auto 0;
+  text-align: left;
+}
+.message-card{
+  display: block;
+  border: 1px solid rgba(10,26,51,0.12);
+  padding: 1.6rem 1.4rem;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+.message-card:hover{
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+.message-card__label{
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.message-card__title{
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--navy);
+  margin-bottom: 0.8rem;
+}
+.message-card__link{
+  font-size: 0.8rem;
+  color: var(--gold);
+}
 
 /* ===== Verse ===== */
 .section--verse{
